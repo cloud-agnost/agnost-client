@@ -7,20 +7,20 @@ import { BucketManager } from "./BucketManager";
 import { RealtimeManager } from "./RealtimeManager";
 import { Fetcher } from "./utils/Fetcher";
 import {
-	KeyValuePair,
-	Session,
-	ClientOptions,
-	ClientStorage,
-	User,
-	APIError,
-	ErrorEntry,
-	FileUploadOptions,
-	CookieOptions,
-	ListenerFunction,
-	EventData,
-	RealtimeOptions,
-	MemberData,
-	UserEventListenerFunction,
+  KeyValuePair,
+  Session,
+  ClientOptions,
+  ClientStorage,
+  User,
+  APIError,
+  ErrorEntry,
+  FileUploadOptions,
+  CookieOptions,
+  ListenerFunction,
+  EventData,
+  RealtimeOptions,
+  MemberData,
+  UserEventListenerFunction,
 } from "./types";
 import { polyfillGlobalThis } from "./utils/polyfills";
 
@@ -35,35 +35,35 @@ polyfillGlobalThis();
  * @returns {AgnostClient} The newly created client instance
  */
 const createClient = (
-	baseUrl: string,
-	apiKey: string,
-	options?: ClientOptions
+  baseUrl: string,
+  apiKey: string,
+  options?: ClientOptions,
 ): AgnostClient => {
-	return new AgnostClient(baseUrl, apiKey, options);
+  return new AgnostClient(baseUrl, apiKey, options);
 };
 
 export {
-	createClient,
-	APIBase,
-	AgnostClient,
-	AuthManager,
-	EndpointManager,
-	Fetcher,
-	KeyValuePair,
-	Session,
-	ClientOptions,
-	ClientStorage,
-	User,
-	APIError,
-	ErrorEntry,
-	StorageManager,
-	BucketManager,
-	FileUploadOptions,
-	RealtimeManager,
-	CookieOptions,
-	ListenerFunction,
-	EventData,
-	RealtimeOptions,
-	MemberData,
-	UserEventListenerFunction,
+  createClient,
+  APIBase,
+  AgnostClient,
+  AuthManager,
+  EndpointManager,
+  Fetcher,
+  KeyValuePair,
+  Session,
+  ClientOptions,
+  ClientStorage,
+  User,
+  APIError,
+  ErrorEntry,
+  StorageManager,
+  BucketManager,
+  FileUploadOptions,
+  RealtimeManager,
+  CookieOptions,
+  ListenerFunction,
+  EventData,
+  RealtimeOptions,
+  MemberData,
+  UserEventListenerFunction,
 };

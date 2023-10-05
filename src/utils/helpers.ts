@@ -8,7 +8,7 @@ import { CookieOptions, KeyValuePair } from "../types";
  * @returns Trailed url string
  */
 export function removeTrailingSlash(url: string) {
-	return url.replace(/\/$/, "");
+  return url.replace(/\/$/, "");
 }
 
 /**
@@ -18,7 +18,7 @@ export function removeTrailingSlash(url: string) {
  * @returns Normalized url string
  */
 export function normalizeUrl(url: string) {
-	return removeTrailingSlash(url.trim());
+  return removeTrailingSlash(url.trim());
 }
 
 /**
@@ -28,18 +28,18 @@ export function normalizeUrl(url: string) {
  * @returns {string | null} The value of the parameter if found in query string part of the url or null otherwise
  */
 export function getParamValue(paramName: string): string | null {
-	if (globalThis.window && paramName) {
-		const url = globalThis.window.location.href;
+  if (globalThis.window && paramName) {
+    const url = globalThis.window.location.href;
 
-		paramName = paramName.replace(/[\[\]]/g, "\\$&");
-		const regex = new RegExp("[?&#]" + paramName + "(=([^&#]*)|&|#|$)");
-		const results = regex.exec(url);
-		if (!results) return null;
-		if (!results[2]) return null;
-		return decodeURIComponent(results[2].replace(/\+/g, " "));
-	}
+    paramName = paramName.replace(/[\[\]]/g, "\\$&");
+    const regex = new RegExp("[?&#]" + paramName + "(=([^&#]*)|&|#|$)");
+    const results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return null;
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
 
-	return null;
+  return null;
 }
 
 /**
@@ -51,25 +51,25 @@ export function getParamValue(paramName: string): string | null {
  * @throws Throws an exception if `fieldValue` is `null` or `undefined`. If `checkEmptyString=true`, throws an exception if string is empty.
  */
 export function checkRequired(
-	fieldName: string,
-	fieldValue: any,
-	checkEmptyString: boolean = true
+  fieldName: string,
+  fieldValue: any,
+  checkEmptyString: boolean = true,
 ) {
-	if (fieldValue === null || fieldValue === undefined)
-		throw new ClientError(
-			"missing_required_value",
-			`${fieldName} is a required parameter, cannot be left empty`
-		);
+  if (fieldValue === null || fieldValue === undefined)
+    throw new ClientError(
+      "missing_required_value",
+      `${fieldName} is a required parameter, cannot be left empty`,
+    );
 
-	if (
-		checkEmptyString &&
-		(fieldValue === "" ||
-			(typeof fieldValue === "string" && fieldValue.trim() === ""))
-	)
-		throw new ClientError(
-			"missing_required_value",
-			`${fieldName} is a required parameter, cannot be left empty`
-		);
+  if (
+    checkEmptyString &&
+    (fieldValue === "" ||
+      (typeof fieldValue === "string" && fieldValue.trim() === ""))
+  )
+    throw new ClientError(
+      "missing_required_value",
+      `${fieldName} is a required parameter, cannot be left empty`,
+    );
 }
 
 /**
@@ -85,36 +85,36 @@ export function checkRequired(
  * @param  {boolean} secure Indicates that the cookie is sent to the server only when a request is made with the https: scheme (except on localhost), and therefore, is more resistant to man-in-the-middle attacks.
  */
 export function setCookie(
-	req: any,
-	res: any,
-	name: string,
-	value: any,
-	maxAge: number,
-	sameSite: "strict" | "lax" | "none",
-	httpOnly: boolean,
-	secure: boolean
+  req: any,
+  res: any,
+  name: string,
+  value: any,
+  maxAge: number,
+  sameSite: "strict" | "lax" | "none",
+  httpOnly: boolean,
+  secure: boolean,
 ) {
-	const cookieStr = serialize(name, stringify(value), {
-		path: "/",
-		maxAge,
-		sameSite,
-		httpOnly,
-		secure,
-	});
+  const cookieStr = serialize(name, stringify(value), {
+    path: "/",
+    maxAge,
+    sameSite,
+    httpOnly,
+    secure,
+  });
 
-	// Check if it is client side or not, if the window object is not defined then we are not at the server side
-	if (typeof window === "undefined") {
-		if (req && res) {
-			const currentCookies = res.getHeader("Set-Cookie");
+  // Check if it is client side or not, if the window object is not defined then we are not at the server side
+  if (typeof window === "undefined") {
+    if (req && res) {
+      const currentCookies = res.getHeader("Set-Cookie");
 
-			res.setHeader(
-				"Set-Cookie",
-				!currentCookies ? [cookieStr] : currentCookies.concat(cookieStr)
-			);
-		}
-	} else if (document) {
-		document.cookie = cookieStr;
-	}
+      res.setHeader(
+        "Set-Cookie",
+        !currentCookies ? [cookieStr] : currentCookies.concat(cookieStr),
+      );
+    }
+  } else if (document) {
+    document.cookie = cookieStr;
+  }
 }
 
 /**
@@ -126,34 +126,34 @@ export function setCookie(
  * @returns {object} The value of the cookie object if found otherwise null
  */
 export function getCookie(req: any, res: any, name: string): any {
-	let cookies: KeyValuePair = {};
-	// Check if it is client side or not, if the window object is not defined then we are at the server side
-	if (typeof window === "undefined") {
-		if (req && res) {
-			// if cookie-parser is used in project get cookies from ctx.req.cookies
-			// if cookie-parser isn't used in project get cookies from ctx.req.headers.cookie
-			if (req.cookies) cookies = req.cookies;
-			if (req.headers?.cookie) cookies = parse(req.headers.cookie);
-		}
-	} else if (document) {
-		const documentCookies = document.cookie ? document.cookie.split("; ") : [];
-		for (const entry of documentCookies) {
-			const cookieParts = entry.split("=");
-			const cvalue = cookieParts.slice(1).join("=");
-			const cname = cookieParts[0];
+  let cookies: KeyValuePair = {};
+  // Check if it is client side or not, if the window object is not defined then we are at the server side
+  if (typeof window === "undefined") {
+    if (req && res) {
+      // if cookie-parser is used in project get cookies from ctx.req.cookies
+      // if cookie-parser isn't used in project get cookies from ctx.req.headers.cookie
+      if (req.cookies) cookies = req.cookies;
+      if (req.headers?.cookie) cookies = parse(req.headers.cookie);
+    }
+  } else if (document) {
+    const documentCookies = document.cookie ? document.cookie.split("; ") : [];
+    for (const entry of documentCookies) {
+      const cookieParts = entry.split("=");
+      const cvalue = cookieParts.slice(1).join("=");
+      const cname = cookieParts[0];
 
-			cookies[cname] = cvalue;
-		}
-	}
+      cookies[cname] = cvalue;
+    }
+  }
 
-	const cookieValue = decode(cookies[name]);
+  const cookieValue = decode(cookies[name]);
 
-	if (cookieValue === "true") return true;
-	if (cookieValue === "false") return false;
-	if (cookieValue === "undefined") return undefined;
-	if (cookieValue === "null") return null;
+  if (cookieValue === "true") return true;
+  if (cookieValue === "false") return false;
+  if (cookieValue === "undefined") return undefined;
+  if (cookieValue === "null") return null;
 
-	return cookieValue;
+  return cookieValue;
 }
 
 /**
@@ -162,12 +162,12 @@ export function getCookie(req: any, res: any, name: string): any {
  * @param  {string} value The value to convert into string
  */
 function stringify(value: string = "") {
-	try {
-		const result = JSON.stringify(value);
-		return /^[\{\[]/.test(result) ? result : value;
-	} catch (e) {
-		return value;
-	}
+  try {
+    const result = JSON.stringify(value);
+    return /^[\{\[]/.test(result) ? result : value;
+  } catch (e) {
+    return value;
+  }
 }
 
 /**
@@ -179,34 +179,34 @@ function stringify(value: string = "") {
  * @return {string} The serialized cookie header
  */
 function serialize(name: string, val: string, options: CookieOptions): string {
-	let str = name + "=" + encode(val);
+  let str = name + "=" + encode(val);
 
-	str += "; Max-Age=" + Math.floor(options.maxAge);
-	str += "; Path=" + options.path;
+  str += "; Max-Age=" + Math.floor(options.maxAge);
+  str += "; Path=" + options.path;
 
-	if (options.httpOnly) {
-		str += "; HttpOnly";
-	}
+  if (options.httpOnly) {
+    str += "; HttpOnly";
+  }
 
-	if (options.secure) {
-		str += "; Secure";
-	}
+  if (options.secure) {
+    str += "; Secure";
+  }
 
-	switch (options.sameSite) {
-		case "lax":
-			str += "; SameSite=Lax";
-			break;
-		case "strict":
-			str += "; SameSite=Strict";
-			break;
-		case "none":
-			str += "; SameSite=None";
-			break;
-		default:
-			break;
-	}
+  switch (options.sameSite) {
+    case "lax":
+      str += "; SameSite=Lax";
+      break;
+    case "strict":
+      str += "; SameSite=Strict";
+      break;
+    case "none":
+      str += "; SameSite=None";
+      break;
+    default:
+      break;
+  }
 
-	return str;
+  return str;
 }
 
 /**
@@ -217,47 +217,47 @@ function serialize(name: string, val: string, options: CookieOptions): string {
  * @public
  */
 function parse(str: string): any {
-	if (typeof str !== "string" || !str) return null;
+  if (typeof str !== "string" || !str) return null;
 
-	const obj: any = {};
-	let index = 0;
-	while (index < str.length) {
-		const eqIdx = str.indexOf("=", index);
-		// no more cookie pairs
-		if (eqIdx === -1) break;
+  const obj: any = {};
+  let index = 0;
+  while (index < str.length) {
+    const eqIdx = str.indexOf("=", index);
+    // no more cookie pairs
+    if (eqIdx === -1) break;
 
-		let endIdx = str.indexOf(";", index);
+    let endIdx = str.indexOf(";", index);
 
-		if (endIdx === -1) {
-			endIdx = str.length;
-		} else if (endIdx < eqIdx) {
-			// backtrack on prior semicolon
-			index = str.lastIndexOf(";", eqIdx - 1) + 1;
-			continue;
-		}
+    if (endIdx === -1) {
+      endIdx = str.length;
+    } else if (endIdx < eqIdx) {
+      // backtrack on prior semicolon
+      index = str.lastIndexOf(";", eqIdx - 1) + 1;
+      continue;
+    }
 
-		const key = str.slice(index, eqIdx).trim();
+    const key = str.slice(index, eqIdx).trim();
 
-		// only assign once
-		if (undefined === obj[key]) {
-			let val = str.slice(eqIdx + 1, endIdx).trim();
+    // only assign once
+    if (undefined === obj[key]) {
+      let val = str.slice(eqIdx + 1, endIdx).trim();
 
-			// quoted values
-			if (val.charCodeAt(0) === 0x22) {
-				val = val.slice(1, -1);
-			}
+      // quoted values
+      if (val.charCodeAt(0) === 0x22) {
+        val = val.slice(1, -1);
+      }
 
-			try {
-				obj[key] = decode(val);
-			} catch (e) {
-				obj[key] = val;
-			}
-		}
+      try {
+        obj[key] = decode(val);
+      } catch (e) {
+        obj[key] = val;
+      }
+    }
 
-		index = endIdx + 1;
-	}
+    index = endIdx + 1;
+  }
 
-	return obj;
+  return obj;
 }
 
 /**
@@ -267,7 +267,7 @@ function parse(str: string): any {
  * @returns {string} Encoded value
  */
 function encode(val: string): string {
-	return encodeURIComponent(val);
+  return encodeURIComponent(val);
 }
 
 /**
@@ -277,8 +277,8 @@ function encode(val: string): string {
  * @returns {string} Encoded value
  */
 function decode(val: string): string {
-	if (!val) return val;
-	return val.replace(/(%[0-9A-Z]{2})+/g, decodeURIComponent);
+  if (!val) return val;
+  return val.replace(/(%[0-9A-Z]{2})+/g, decodeURIComponent);
 }
 
 /**
@@ -288,32 +288,32 @@ function decode(val: string): string {
  * @returns {object} Parsed environment url components
  */
 export function parseRealtimeEnvUrl(envUrl: string): any {
-	// Get rid of http:// or https://
-	let temp;
-	let protocol;
-	if (envUrl.startsWith("https://")) {
-		temp = envUrl.replace("https://", "");
-		protocol = "https://";
-	} else {
-		temp = envUrl.replace("http://", "");
-		protocol = "http://";
-	}
-	// Base url shold be something of the following, we always expect
-	// 1. customdomain/envId or
-	// 2. ip_number/envId
-	// 3. localhost/envId
+  // Get rid of http:// or https://
+  let temp;
+  let protocol;
+  if (envUrl.startsWith("https://")) {
+    temp = envUrl.replace("https://", "");
+    protocol = "https://";
+  } else {
+    temp = envUrl.replace("http://", "");
+    protocol = "http://";
+  }
+  // Base url shold be something of the following, we always expect
+  // 1. customdomain/envId or
+  // 2. ip_number/envId
+  // 3. localhost/envId
 
-	// Lets get the items
-	const items = temp.split("/");
+  // Lets get the items
+  const items = temp.split("/");
 
-	if (items.length === 2) {
-		return {
-			realtimeUrl: `${protocol}${items[0]}`,
-			envId: items[1],
-			path: "/realtime/realtime/",
-		};
-	}
+  if (items.length === 2) {
+    return {
+      realtimeUrl: `${protocol}${items[0]}`,
+      envId: items[1],
+      path: "/realtime/realtime/",
+    };
+  }
 
-	// Not a valid base url
-	return { realtimeUrl: "", envId: "" };
+  // Not a valid base url
+  return { realtimeUrl: "", envId: "" };
 }

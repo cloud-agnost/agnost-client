@@ -9,18 +9,18 @@ import { Fetcher } from "./utils/Fetcher";
  * @class DatabaseManager
  */
 export class APIBase {
-	/**
-	 * The http client to make RESTful API calls to your app version's API server
-	 * @protected
-	 * @type {Fetcher}
-	 */
-	protected fetcher: Fetcher;
+  /**
+   * The http client to make RESTful API calls to your app version's API server
+   * @protected
+   * @type {Fetcher}
+   */
+  protected fetcher: Fetcher;
 
-	/**
-	 * Creates an instance of base class to access services exposed by your Agnost app
-	 * @param {Fetcher} fetcher The http client to make RESTful API calls to your app version's API server
-	 */
-	constructor(fetcher: Fetcher) {
-		this.fetcher = fetcher;
-	}
+  /**
+   * Creates an instance of base class to access services exposed by your Agnost app
+   * @param {Fetcher} fetcher The http client to make RESTful API calls to your app version's API server
+   */
+  constructor(fetcher: Fetcher) {
+    this.fetcher = fetcher;
+  }
 }
