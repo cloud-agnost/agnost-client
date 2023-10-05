@@ -170,7 +170,7 @@ export class AgnostClient {
 	/**
 	 * Returns the realtime manager, which is used to publish and subscribe (pub/sub) messaging through websockets.
 	 *
-	 * > *If the client library key is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to establish a realtime connection.*
+	 * > *If the realtime settings of the app version is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to establish a realtime connection.*
 	 * @readonly
 	 * @type {RealtimeManager}
 	 */

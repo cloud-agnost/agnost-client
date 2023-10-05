@@ -162,7 +162,7 @@ export class RealtimeManager extends APIBase {
 	/**
 	 * Manually open the realtime connection, connects the socket.
 	 *
-	 * > *If the client library key is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
+	 * > *If the realtime settings of the app version is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
 	 * @returns {void}
 	 */
 	open(): void {
@@ -257,7 +257,7 @@ export class RealtimeManager extends APIBase {
 	/**
 	 * Sends the message identified by the `eventName` to all connected members of the app. All serializable datastructures are supported for the `message`, including `Buffer`.
 	 *
-	 * > *If the client library key is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
+	 * > *If the realtime settings of the app version is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
 	 * @param {string} eventName The name of the event.
 	 * @param {any} message The message payload/contents.
 	 * @param {boolean} echo Override the echo flag specified when creating the websocket to enable or prevent realtime messages originating from this connection being echoed back on the same connection.
@@ -274,7 +274,7 @@ export class RealtimeManager extends APIBase {
 	/**
 	 * Sends the message identified by the `eventName` to the provided channel members only. All serializable datastructures are supported for the `message`, including `Buffer`.
 	 *
-	 * > *If the client library key is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
+	 * > *If the realtime settings of the app version is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
 	 * @param {string} channel The name of the channel.
 	 * @param {string} eventName The name of the event.
 	 * @param {any} message The message payload/contents.
@@ -299,7 +299,7 @@ export class RealtimeManager extends APIBase {
 	/**
 	 * Adds the realtime socket to the specified channel. As a result of this action a `channel:join` event is sent to all members of the channel notifying the new member arrival.
 	 *
-	 * > *If the client library key is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
+	 * > *If the realtime settings of the app version is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
 	 * @param {string} channel The name of the channel.
 	 * @param {boolean} echo Override the echo flag specified when creating the websocket to enable or prevent `channel:join` event originating from this connection being echoed back on the same connection.
 	 * @returns {void}
@@ -316,7 +316,7 @@ export class RealtimeManager extends APIBase {
 	/**
 	 * Removes the realtime socket from the specified channel. As a result of this action a `channel:leave` event is sent to all members of the channel notifying the departure of existing member.
 	 *
-	 * > *If the client library key is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
+	 * > If the realtime settings of the app version is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
 	 * @param {string} channel The name of the channel.
 	 * @param {boolean} echo Override the echo flag specified when creating the websocket to enable or prevent `channel:leave` event originating from this connection being echoed back on the same connection.
 	 * @returns {void}
@@ -335,7 +335,7 @@ export class RealtimeManager extends APIBase {
 	 *
 	 * As an example if you are developing a realtime chat application it might be a good idea to store the username and user profile picture URL in member data so that joined chat channels can get updated user information.
 	 *
-	 * > *If the client library key is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
+	 * > *If the realtime settings of the app version is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
 	 * @param {any} data data payload for the current member. The supported payload types are Strings, JSON objects and arrays, buffers containing arbitrary binary data, and null.
 	 * @param {boolean} echo Override the echo flag specified when creating the websocket to enable or prevent `channel:update` event originating from this connection being echoed back on the same connection.
 	 * @returns {void}
@@ -377,7 +377,7 @@ export class RealtimeManager extends APIBase {
 	/**
 	 * Returns the members of the specified channel.
 	 *
-	 * > *If the client library key is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
+	 * > *If the realtime settings of the app version is set to **enforce session**, an active user session is required (e.g., user needs to be logged in) to call this method.*
 	 * @param {string} channel The name of the channel.
 	 * @returns Returns array of channel member data. If no channel members then returns and empty array []
 	 * @throws Throws an exception if `channel` is not specified

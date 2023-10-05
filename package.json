@@ -37,7 +37,7 @@
    "bugs": {
       "url": "https://github.com/cloud-agnost/agnost-client/issues"
    },
-   "homepage": "https://github.com/cloud-agnost/agnost-server",
+   "homepage": "https://github.com/cloud-agnost/agnost-client",
    "devDependencies": {
       "@types/node": "^20.4.1",
       "prettier": "^3.0.0",
