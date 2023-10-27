@@ -30,7 +30,7 @@ create your Agnost client instance.
 import { createClient } from 'agnost';
 
 //Create a client for interacting with backend app
-//You need to provide envUrl and clientKey as input parameters
+//You need to provide envUrl and apiKey as input parameters
 const agnost = createClient('http://my-cluster.com/env-myenvid', 'api-key');
 ```
 
@@ -49,7 +49,7 @@ Then you can use it from a global `agnost` variable:
 <script>
    const { createClient } = agnost;
    //Create a client for interacting with backend app
-   //You need to provide envUrl and clientKey as input parameters
+   //You need to provide envUrl and apiKey as input parameters
    const client = createClient('http://my-cluster.com/env-myenvid', 'api-key');
 </script>
 ```
@@ -221,8 +221,8 @@ const result = await agnost.storage
 
 You can use the following resources to learn more and get help
 
--  🚀 [Quick start](https://www.agnost.com/docs/quick-start)
--  📜 [Agnost Docs](https://www.agnost.com/docs)
+-  [Quick start](https://www.agnost.com/docs/quick-start)
+-  [Agnost Docs](https://www.agnost.com/docs)
 
 ## Bugs Report
 
