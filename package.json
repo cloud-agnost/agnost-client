@@ -25,7 +25,7 @@
       "prepare": "npm run build && npm run buildumd",
       "preversion": "npm run lint",
       "version": "npm run format && git add .",
-      "postversion": "git push && git push origin master",
+      "postversion": "git push --set-upstream origin master",
       "docs": "typedoc src/index.ts"
    },
    "repository": {
