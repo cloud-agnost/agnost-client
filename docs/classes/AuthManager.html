@@ -1,0 +1,1070 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>AuthManager | @agnost/client</title><meta name="description" content="Documentation for @agnost/client"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base="..">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">@agnost/client</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<ul class="tsd-breadcrumb">
+<li><a href="../modules.html">@agnost/client</a></li>
+<li><a href="AuthManager.html">AuthManager</a></li></ul>
+<h1>Class AuthManager</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>Handles the authentication process of your application users. Provides methods to manage users, sessions and authentication.</p>
+<p>You are free to design the way to authenticate your users and manage sessions in Agnost through defining your custom services. However, by default Agnost provides three methods to manage user accounts through the client library.</p>
+<ol>
+<li><strong>Email and password based account management:</strong> This is the default authentication method and it requires email address validation. If you set email validation as required, you need to configure the SMTP server to send confirmation emails. You can customize to enable/disable email confirmations, use your own SMTP server to send email and define your email templates.</li>
+<li><strong>Phone number and password based account management:</strong> You can also allow your uses to sign up using their phone numbers and validate these phone numbers by sending a validation code through SMS. In order to use this method of authentication, you need to configure the SMS provider. Agnost currently supports Twilio, MessageBird, and Vonage for sending SMS messages.</li>
+<li><strong>Authentication through 3rd party Oauth providers</strong> such as Google, Apple, Facebook, Twitter, GitHub, Discord: This method enables to run the oauth flow of specific provider in your front-end applications. In order to use this method you need to make specific configuration at the provider to retrieve client id and client secret.</li>
+</ol>
+<p>To use any of the above authentication methods you need to configure your authentication settings of your app version. You can customize these settings in Agnost Studio under <strong>Version Settings/Authentication</strong>.</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<h4>Export</h4></div></section>
+<section class="tsd-panel tsd-hierarchy">
+<h4>Hierarchy</h4>
+<ul class="tsd-hierarchy">
+<li><a href="APIBase.html" class="tsd-signature-type tsd-kind-class">APIBase</a>
+<ul class="tsd-hierarchy">
+<li><span class="target">AuthManager</span></li></ul></li></ul></section><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L29">AuthManager.ts:29</a></li></ul></aside>
+<section class="tsd-panel-group tsd-index-group">
+<section class="tsd-panel tsd-index-panel">
+<details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
+<h5 class="tsd-index-heading uppercase" role="button" aria-expanded="false" tabIndex=0><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1.5 5.50969L8 11.6609L14.5 5.50969L12.5466 3.66086L8 7.96494L3.45341 3.66086L1.5 5.50969Z" fill="var(--color-text)"></path></svg> Index</h5></summary>
+<div class="tsd-accordion-details">
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Constructors</h3>
+<div class="tsd-index-list"><a href="AuthManager.html#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-512"><rect fill="var(--color-icon-background)" stroke="#4D7FFF" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)"></path></g></svg><span>constructor</span></a>
+</div></section>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Properties</h3>
+<div class="tsd-index-list"><a href="AuthManager.html#_client" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-1024"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)"></path></g></svg><span>#client</span></a>
+<a href="AuthManager.html#_localStorage" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>#local<wbr/>Storage?</span></a>
+<a href="AuthManager.html#_signInRedirect" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>#sign<wbr/>In<wbr/>Redirect?</span></a>
+<a href="AuthManager.html#fetcher" class="tsd-index-link tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>fetcher</span></a>
+</div></section>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Methods</h3>
+<div class="tsd-index-list"><a href="AuthManager.html#_deleteLocalData" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-2048"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)"></path></g></svg><span>#delete<wbr/>Local<wbr/>Data</span></a>
+<a href="AuthManager.html#_saveLocalData" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>#save<wbr/>Local<wbr/>Data</span></a>
+<a href="AuthManager.html#changeEmail" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>change<wbr/>Email</span></a>
+<a href="AuthManager.html#changePassword" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>change<wbr/>Password</span></a>
+<a href="AuthManager.html#changePhone" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>change<wbr/>Phone</span></a>
+<a href="AuthManager.html#clearLocalData" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>clear<wbr/>Local<wbr/>Data</span></a>
+<a href="AuthManager.html#getAllSessions" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>All<wbr/>Sessions</span></a>
+<a href="AuthManager.html#getAuthGrant" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Auth<wbr/>Grant</span></a>
+<a href="AuthManager.html#getSession" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Session</span></a>
+<a href="AuthManager.html#getUser" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>User</span></a>
+<a href="AuthManager.html#getUserFromDB" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>User<wbr/>FromDB</span></a>
+<a href="AuthManager.html#getUserFromDBbyCookie" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>User<wbr/>FromDBby<wbr/>Cookie</span></a>
+<a href="AuthManager.html#invalidateSession" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>invalidate<wbr/>Session</span></a>
+<a href="AuthManager.html#onUserEvent" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>on<wbr/>User<wbr/>Event</span></a>
+<a href="AuthManager.html#removeSessionCookie" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>remove<wbr/>Session<wbr/>Cookie</span></a>
+<a href="AuthManager.html#resendVerificationCode" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>resend<wbr/>Verification<wbr/>Code</span></a>
+<a href="AuthManager.html#resendVerificationEmail" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>resend<wbr/>Verification<wbr/>Email</span></a>
+<a href="AuthManager.html#resetPwdWithCode" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>reset<wbr/>Pwd<wbr/>With<wbr/>Code</span></a>
+<a href="AuthManager.html#resetPwdWithToken" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>reset<wbr/>Pwd<wbr/>With<wbr/>Token</span></a>
+<a href="AuthManager.html#sendMagicLinkEmail" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>send<wbr/>Magic<wbr/>Link<wbr/>Email</span></a>
+<a href="AuthManager.html#sendResetPwdCode" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>send<wbr/>Reset<wbr/>Pwd<wbr/>Code</span></a>
+<a href="AuthManager.html#sendResetPwdEmail" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>send<wbr/>Reset<wbr/>Pwd<wbr/>Email</span></a>
+<a href="AuthManager.html#sendSignInCode" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>send<wbr/>Sign<wbr/>In<wbr/>Code</span></a>
+<a href="AuthManager.html#setSession" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>set<wbr/>Session</span></a>
+<a href="AuthManager.html#setSessionCookie" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>set<wbr/>Session<wbr/>Cookie</span></a>
+<a href="AuthManager.html#setUser" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>set<wbr/>User</span></a>
+<a href="AuthManager.html#signInWithCode" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>In<wbr/>With<wbr/>Code</span></a>
+<a href="AuthManager.html#signInWithEmail" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>In<wbr/>With<wbr/>Email</span></a>
+<a href="AuthManager.html#signInWithPhone" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>In<wbr/>With<wbr/>Phone</span></a>
+<a href="AuthManager.html#signInWithProvider" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>In<wbr/>With<wbr/>Provider</span></a>
+<a href="AuthManager.html#signOut" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>Out</span></a>
+<a href="AuthManager.html#signOutAll" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>Out<wbr/>All</span></a>
+<a href="AuthManager.html#signOutAllExceptCurrent" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>Out<wbr/>All<wbr/>Except<wbr/>Current</span></a>
+<a href="AuthManager.html#signUpWithEmail" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>Up<wbr/>With<wbr/>Email</span></a>
+<a href="AuthManager.html#signUpWithPhone" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>Up<wbr/>With<wbr/>Phone</span></a>
+<a href="AuthManager.html#verifyPhone" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>verify<wbr/>Phone</span></a>
+</div></section></div></details></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Constructors</h2>
+<section class="tsd-panel tsd-member"><a id="constructor" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" id="icon-anchor"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></g></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="constructor.new_AuthManager"><span class="tsd-kind-constructor-signature">new <wbr/>Auth<wbr/>Manager</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">client</span>, <span class="tsd-kind-parameter">fetcher</span>, <span class="tsd-kind-parameter">__namedParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="AuthManager.html" class="tsd-signature-type tsd-kind-class">AuthManager</a><a href="#constructor.new_AuthManager" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Creates an instance of AuthManager to manage your application users and user sessions.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">client</span>: <a href="AgnostClient.html" class="tsd-signature-type tsd-kind-class">AgnostClient</a></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">fetcher</span>: <a href="Fetcher.html" class="tsd-signature-type tsd-kind-class">Fetcher</a></h5>
+<div class="tsd-comment tsd-typography"><p>The http client to make RESTful API calls to the application&#39;s execution engine</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">__namedParameters</span>: <a href="../interfaces/ClientOptions.html" class="tsd-signature-type tsd-kind-interface">ClientOptions</a></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="AuthManager.html" class="tsd-signature-type tsd-kind-class">AuthManager</a></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<p>Overrides <a href="APIBase.html">APIBase</a>.<a href="APIBase.html#constructor">constructor</a></p>
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L53">AuthManager.ts:53</a></li></ul></aside></li></ul></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Properties</h2>
+<section class="tsd-panel tsd-member tsd-is-private"><a id="_client" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>#client</span><a href="#_client" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">#client</span><span class="tsd-signature-symbol">:</span> <a href="AgnostClient.html" class="tsd-signature-type tsd-kind-class">AgnostClient</a></div>
+<div class="tsd-comment tsd-typography"><p>Reference to the Agnost client library realtime manager</p>
+</div>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L46">AuthManager.ts:46</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private"><a id="_localStorage" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <code class="tsd-tag ts-flagOptional">Optional</code> <span>#local<wbr/>Storage</span><a href="#_localStorage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">#local<wbr/>Storage</span><span class="tsd-signature-symbol">?:</span> <a href="../interfaces/ClientStorage.html" class="tsd-signature-type tsd-kind-interface">ClientStorage</a></div>
+<div class="tsd-comment tsd-typography"><p>Storage handler to manage local user and session data</p>
+</div>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L34">AuthManager.ts:34</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private"><a id="_signInRedirect" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <code class="tsd-tag ts-flagOptional">Optional</code> <span>#sign<wbr/>In<wbr/>Redirect</span><a href="#_signInRedirect" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">#sign<wbr/>In<wbr/>Redirect</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Sign in page url to redirect when the user&#39;s session becomes invalid</p>
+</div>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L40">AuthManager.ts:40</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited"><a id="fetcher" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagProtected">Protected</code> <span>fetcher</span><a href="#fetcher" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">fetcher</span><span class="tsd-signature-symbol">:</span> <a href="Fetcher.html" class="tsd-signature-type tsd-kind-class">Fetcher</a></div>
+<div class="tsd-comment tsd-typography"><p>The http client to make RESTful API calls to your app version&#39;s API server</p>
+</div>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<p>Inherited from <a href="APIBase.html">APIBase</a>.<a href="APIBase.html#fetcher">fetcher</a></p>
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/APIBase.ts#L17">APIBase.ts:17</a></li></ul></aside></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Methods</h2>
+<section class="tsd-panel tsd-member tsd-is-private"><a id="_deleteLocalData" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>#delete<wbr/>Local<wbr/>Data</span><a href="#_deleteLocalData" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-private">
+<li class="tsd-signature tsd-anchor-link" id="_deleteLocalData._deleteLocalData-1"><span class="tsd-kind-call-signature">#delete<wbr/>Local<wbr/>Data</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#_deleteLocalData._deleteLocalData-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Deletes the currently active session and user data in local storage.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L67">AuthManager.ts:67</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-private"><a id="_saveLocalData" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>#save<wbr/>Local<wbr/>Data</span><a href="#_saveLocalData" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-private">
+<li class="tsd-signature tsd-anchor-link" id="_saveLocalData._saveLocalData-1"><span class="tsd-kind-call-signature">#save<wbr/>Local<wbr/>Data</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">user</span>, <span class="tsd-kind-parameter">session</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#_saveLocalData._saveLocalData-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Saves the session and user data to the local storage.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">user</span>: <a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a></h5>
+<div class="tsd-comment tsd-typography"><p>The user data</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">session</span>: <a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a></h5>
+<div class="tsd-comment tsd-typography"><p>The session data</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L79">AuthManager.ts:79</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="changeEmail" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>change<wbr/>Email</span><a href="#changeEmail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="changeEmail.changeEmail-1"><span class="tsd-kind-call-signature">change<wbr/>Email</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">currentPassword</span>, <span class="tsd-kind-parameter">newEmail</span>, <span class="tsd-kind-parameter">redirectURL</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#changeEmail.changeEmail-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Changes the email of the user to a new one.</p>
+<p>If email confirmation is <strong>disabled</strong> in your app authentication settings, it immediately updates the user&#39;s email and returns back the updated user data.</p>
+<p>If email confirmation is <strong>enabled</strong> in your app authentication settings, it sends a confirmation email to the new email address with a link for the user to click and returns the current user&#39;s info. Until the user clicks on the link, the user&#39;s email address will not be changed to the new one.</p>
+<blockquote>
+<p><em>An active user session is required (e.g., user needs to be logged in) to call this method.</em></p>
+</blockquote>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">currentPassword</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The password of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">newEmail</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The new email address of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">redirectURL</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>This parameter is required if email confirmation is enabled. After the new email address of the user is confirmed, the user is redirected to this URL with success or error status in query string parameter. The <code>redirectURL</code> needs to match with one of the configured redirect URLs in your <strong>Version Settings/Authentication</strong> configuration in Agnost Studio.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L716">AuthManager.ts:716</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="changePassword" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>change<wbr/>Password</span><a href="#changePassword" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="changePassword.changePassword-1"><span class="tsd-kind-call-signature">change<wbr/>Password</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">newPassword</span>, <span class="tsd-kind-parameter">oldPassword</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#changePassword.changePassword-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Changes the password of the user.</p>
+<blockquote>
+<p><em>An active user session is required (e.g., user needs to be logged in) to call this method.</em></p>
+</blockquote>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">newPassword</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The new password of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">oldPassword</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The current password of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L519">AuthManager.ts:519</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="changePhone" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>change<wbr/>Phone</span><a href="#changePhone" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="changePhone.changePhone-1"><span class="tsd-kind-call-signature">change<wbr/>Phone</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">currentPassword</span>, <span class="tsd-kind-parameter">newPhone</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#changePhone.changePhone-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Changes the phone number of the user to a new one.</p>
+<p>If phone number confirmation is <strong>disabled</strong> in your app authentication settings, it immediately updates the user&#39;s phone number and returns back the updated user data.</p>
+<p>If phone number confirmation is <strong>enabled</strong> in your app authentication settings, it sends a confirmation SMS code to the new phone number and returns the current user&#39;s info. After sending the SMS code by calling this method, you need to show a form to the user to enter this SMS code and call <code>verifyPhone</code> method with the new phone number and the code to change user&#39;s phone number to the new one.</p>
+<blockquote>
+<p><em>An active user session is required (e.g., user needs to be logged in) to call this method.</em></p>
+</blockquote>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">currentPassword</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The password of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">newPhone</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The new phone number of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L742">AuthManager.ts:742</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="clearLocalData" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>clear<wbr/>Local<wbr/>Data</span><a href="#clearLocalData" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="clearLocalData.clearLocalData-1"><span class="tsd-kind-call-signature">clear<wbr/>Local<wbr/>Data</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#clearLocalData.clearLocalData-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>By default Agnost saves the session and user data in local storage whenever a new session is created (e.g., through sign up or sign in methods). This method clears the locally saved session and user data. In contrast to <a href="AuthManager.html#invalidateSession" class="tsd-kind-method">invalidateSession</a>, this method does not clear <strong>Session</strong> token request header in <a href="Fetcher.html" class="tsd-kind-class">Fetcher</a> and does not redirect to a sign in page.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L90">AuthManager.ts:90</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="getAllSessions" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>All<wbr/>Sessions</span><a href="#getAllSessions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="getAllSessions.getAllSessions-1"><span class="tsd-kind-call-signature">get<wbr/>All<wbr/>Sessions</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">sessions</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#getAllSessions.getAllSessions-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Gets all active sessions of a user.</p>
+<blockquote>
+<p><em>An active user session is required (e.g., user needs to be logged in) to call this method.</em></p>
+</blockquote>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">sessions</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L491">AuthManager.ts:491</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="getAuthGrant" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Auth<wbr/>Grant</span><a href="#getAuthGrant" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="getAuthGrant.getAuthGrant-1"><span class="tsd-kind-call-signature">get<wbr/>Auth<wbr/>Grant</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">accessToken</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#getAuthGrant.getAuthGrant-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retrieves the authorization grants of a user using the specified input <code>accessToken</code>. If no <code>accessToken</code> specified as input, tries to retrieve the <code>accessToken</code> from the browser url query string parameter named &#39;access_token&#39;.</p>
+<p>If successful this method also saves the user and session data to local storage and sets the <strong>Session</strong> header in <a href="Fetcher.html" class="tsd-kind-class">Fetcher</a></p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">accessToken</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The access token that will be used to get the authorization grants of a user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L536">AuthManager.ts:536</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="getSession" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Session</span><a href="#getSession" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="getSession.getSession-1"><span class="tsd-kind-call-signature">get<wbr/>Session</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><a href="#getSession.getSession-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the currently active session data from local storage.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L109">AuthManager.ts:109</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="getUser" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>User</span><a href="#getUser" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="getUser.getUser-1"><span class="tsd-kind-call-signature">get<wbr/>User</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><a href="#getUser.getUser-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the user data from local storage.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L120">AuthManager.ts:120</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="getUserFromDB" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>User<wbr/>FromDB</span><a href="#getUserFromDB" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="getUserFromDB.getUserFromDB-1"><span class="tsd-kind-call-signature">get<wbr/>User<wbr/>FromDB</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#getUserFromDB.getUserFromDB-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retrieves the user associated with the active session from the database.</p>
+<blockquote>
+<p><em>An active user session is required (e.g., user needs to be logged in) to call this method.</em></p>
+</blockquote>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L504">AuthManager.ts:504</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="getUserFromDBbyCookie" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>User<wbr/>FromDBby<wbr/>Cookie</span><a href="#getUserFromDBbyCookie" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="getUserFromDBbyCookie.getUserFromDBbyCookie-1"><span class="tsd-kind-call-signature">get<wbr/>User<wbr/>FromDBby<wbr/>Cookie</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">req</span>, <span class="tsd-kind-parameter">res</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#getUserFromDBbyCookie.getUserFromDBbyCookie-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retrieves the user data from the database associated with the session token stored in the request cookie. If the session token is not valid then invalidates the session and removes the session cookie.</p>
+<blockquote>
+<p><em>An active user session is required (e.g., user needs to be logged in) to call this method.</em></p>
+</blockquote>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">req</span>: <span class="tsd-signature-type">any</span></h5>
+<div class="tsd-comment tsd-typography"><p>Represents the HTTP request and has properties for the request query string, parameters, body, HTTP headers, and so on</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">any</span></h5>
+<div class="tsd-comment tsd-typography"><p>Represents the HTTP response that an Express or Next.js app sends when it gets an HTTP request</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L189">AuthManager.ts:189</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="invalidateSession" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>invalidate<wbr/>Session</span><a href="#invalidateSession" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="invalidateSession.invalidateSession-1"><span class="tsd-kind-call-signature">invalidate<wbr/>Session</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#invalidateSession.invalidateSession-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Invalidates the current user session, removes local session data, and clears <strong>Session</strong> token request header in <a href="Fetcher.html" class="tsd-kind-class">Fetcher</a>. If <strong>signInRedirect</strong> is specified in <a href="../interfaces/ClientOptions.html" class="tsd-kind-interface">ClientOptions</a> when creating the Agnost api client and if the client is running in a browser, redirects the user to the sign in page.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L97">AuthManager.ts:97</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="onUserEvent" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>on<wbr/>User<wbr/>Event</span><a href="#onUserEvent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="onUserEvent.onUserEvent-1"><span class="tsd-kind-call-signature">on<wbr/>User<wbr/>Event</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">listener</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#onUserEvent.onUserEvent-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Registers a method to listen to main user events. The following events will be listened:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">user:signin</td>
+<td align="left">Triggered whenever a new user session is created.</td>
+</tr>
+<tr>
+<td align="left">user:signout</td>
+<td align="left">Triggered when a user session is deleted. If <a href="AuthManager.html#signOutAll" class="tsd-kind-method">signOutAll</a> or <a href="AuthManager.html#signOutAllExceptCurrent" class="tsd-kind-method">signOutAllExceptCurrent</a> method is called then for each deleted sesssion a separate <code>user:signout</code> event is triggered.</td>
+</tr>
+<tr>
+<td align="left">user:pwdchange</td>
+<td align="left">Triggered when the user password changes, either through direct password update or password reset.</td>
+</tr>
+<tr>
+<td align="left">user:emailchange</td>
+<td align="left">Triggered whenever the email of the user changes.</td>
+</tr>
+<tr>
+<td align="left">user:phonechange</td>
+<td align="left">Triggered whenever the phone number of the user changes.</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><em>An active user session is required (e.g., user needs to be logged in) to call this method.</em></p>
+</blockquote>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">listener</span>: <a href="../types/UserEventListenerFunction.html" class="tsd-signature-type tsd-kind-type-alias">UserEventListenerFunction</a></h5>
+<div class="tsd-comment tsd-typography"><p>The listener function. This function gets two input parameters the name of the event that is being triggered and the user session object that has triggered the event. If the event is triggered by the user without a session, then the session value will be <code>null</code>.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L802">AuthManager.ts:802</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="removeSessionCookie" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>remove<wbr/>Session<wbr/>Cookie</span><a href="#removeSessionCookie" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="removeSessionCookie.removeSessionCookie-1"><span class="tsd-kind-call-signature">remove<wbr/>Session<wbr/>Cookie</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">req</span>, <span class="tsd-kind-parameter">res</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#removeSessionCookie.removeSessionCookie-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Removes the session token from the <em>Set-Cookie</em> header. This method is primarily used to remove the session token passed between the client (e.g., browser) and the server (e.g., next.js, express) in an app where server side rendering is used.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">req</span>: <span class="tsd-signature-type">any</span></h5>
+<div class="tsd-comment tsd-typography"><p>Represents the HTTP request and has properties for the request query string, parameters, body, HTTP headers, and so on</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">any</span></h5>
+<div class="tsd-comment tsd-typography"><p>Represents the HTTP response that an Express or Next.js app sends when it gets an HTTP request</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L178">AuthManager.ts:178</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="resendVerificationCode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>resend<wbr/>Verification<wbr/>Code</span><a href="#resendVerificationCode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="resendVerificationCode.resendVerificationCode-1"><span class="tsd-kind-call-signature">resend<wbr/>Verification<wbr/>Code</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">phone</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#resendVerificationCode.resendVerificationCode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Resends the code to verify the user&#39;s phone number. If the user&#39;s phone has already been validated or phone confirmation is <strong>disabled</strong> in your app authentication settings, it returns an error.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">phone</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The phone number of the user to send the verification SMS code</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L575">AuthManager.ts:575</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="resendVerificationEmail" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>resend<wbr/>Verification<wbr/>Email</span><a href="#resendVerificationEmail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="resendVerificationEmail.resendVerificationEmail-1"><span class="tsd-kind-call-signature">resend<wbr/>Verification<wbr/>Email</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">email</span>, <span class="tsd-kind-parameter">redirectURL</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#resendVerificationEmail.resendVerificationEmail-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Resends the email to verify the user&#39;s email address. If the user&#39;s email has already been validated or email confirmation is <strong>disabled</strong> in your app authentication settings, it returns an error.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">email</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The email address of the user to send the verification email</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">redirectURL</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>After email address of the user is confirmed, the user is redirected to this URL with an <code>access_token</code> in query string parameter. The <code>redirectURL</code> needs to match with one of the configured redirect URLs in your <strong>Version Settings/Authentication</strong> configuration in Agnost Studio.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L559">AuthManager.ts:559</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="resetPwdWithCode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>reset<wbr/>Pwd<wbr/>With<wbr/>Code</span><a href="#resetPwdWithCode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="resetPwdWithCode.resetPwdWithCode-1"><span class="tsd-kind-call-signature">reset<wbr/>Pwd<wbr/>With<wbr/>Code</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">phone</span>, <span class="tsd-kind-parameter">code</span>, <span class="tsd-kind-parameter">newPassword</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#resetPwdWithCode.resetPwdWithCode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Resets the password of the user using the SMS code provided through the <a href="AuthManager.html#sendResetPwdCode" class="tsd-kind-method">sendResetPwdCode</a> method.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">phone</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The phone number of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">code</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The SMS code that is sent to the users phone number</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">newPassword</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The new password of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L688">AuthManager.ts:688</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="resetPwdWithToken" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>reset<wbr/>Pwd<wbr/>With<wbr/>Token</span><a href="#resetPwdWithToken" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="resetPwdWithToken.resetPwdWithToken-1"><span class="tsd-kind-call-signature">reset<wbr/>Pwd<wbr/>With<wbr/>Token</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">accessToken</span>, <span class="tsd-kind-parameter">newPassword</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#resetPwdWithToken.resetPwdWithToken-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Resets the password of the user using the access token provided through the <a href="AuthManager.html#sendResetPwdEmail" class="tsd-kind-method">sendResetPwdEmail</a> flow.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">accessToken</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The access token that is retrieved from the redirect URL query string parameter</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">newPassword</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The new password of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L669">AuthManager.ts:669</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="sendMagicLinkEmail" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>send<wbr/>Magic<wbr/>Link<wbr/>Email</span><a href="#sendMagicLinkEmail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="sendMagicLinkEmail.sendMagicLinkEmail-1"><span class="tsd-kind-call-signature">send<wbr/>Magic<wbr/>Link<wbr/>Email</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">email</span>, <span class="tsd-kind-parameter">redirectURL</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#sendMagicLinkEmail.sendMagicLinkEmail-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sends a magic link to the email of the user.</p>
+<p>This method works only if email confirmation is <strong>enabled</strong> in your app authentication settings and the user&#39;s email address has already been verified.</p>
+<p>When the user clicks on the link in email, Agnost verifies the validity of the magic link and if successful redirects the user to the specified redirect URL with an access token in a query string parameter named &#39;access_token.&#39; You can call <a href="AuthManager.html#getAuthGrant" class="tsd-kind-method">getAuthGrant</a> method with this access token to create a new session object.</p>
+<p>If email confirmation is <strong>disabled</strong> in your app authentication settings or if the user&#39;s email has not been verified, it returns an error.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">email</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The email address of the user to send the verification email</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">redirectURL</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>After successful sign in through magic link, the user is redirected to this URL with an <code>access_token</code> in query string parameter. The <code>redirectURL</code> needs to match with one of the configured redirect URLs in your <strong>Version Settings/Authentication</strong> configuration in Agnost Studio.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L595">AuthManager.ts:595</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="sendResetPwdCode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>send<wbr/>Reset<wbr/>Pwd<wbr/>Code</span><a href="#sendResetPwdCode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="sendResetPwdCode.sendResetPwdCode-1"><span class="tsd-kind-call-signature">send<wbr/>Reset<wbr/>Pwd<wbr/>Code</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">phone</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#sendResetPwdCode.sendResetPwdCode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sends an SMS code to reset password.</p>
+<p>This method works only if phone number confirmation is <strong>enabled</strong> in your app authentication settings and the user&#39;s phone number has already been verified.</p>
+<p>After sending the SMS code, you need to display a password reset form to the user. When you get the new password from the user, you can call <a href="AuthManager.html#resetPwdWithCode" class="tsd-kind-method">resetPwdWithCode</a> method with the phone number of the user, SMS code and new password.</p>
+<p>If phone number confirmation is <strong>disabled</strong> in your app authentication settings or if the user&#39;s phone has not been verified, it returns an error.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">phone</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The phone number of the user to send the reset password code</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L640">AuthManager.ts:640</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="sendResetPwdEmail" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>send<wbr/>Reset<wbr/>Pwd<wbr/>Email</span><a href="#sendResetPwdEmail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="sendResetPwdEmail.sendResetPwdEmail-1"><span class="tsd-kind-call-signature">send<wbr/>Reset<wbr/>Pwd<wbr/>Email</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">email</span>, <span class="tsd-kind-parameter">redirectURL</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#sendResetPwdEmail.sendResetPwdEmail-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sends an email with a link to reset password.</p>
+<p>This method works only if email confirmation is <strong>enabled</strong> in your app authentication settings and the user&#39;s email address has already been verified.</p>
+<p>When the user clicks on the link in email, Agnost verifies the validity of the reset-password link and if successful redirects the user to the specified redirect URL with an access token in a query string parameter named &#39;access_token.&#39; At this state your app needs to detect <code>action=reset-pwd</code> in the redirect URL and display a password reset form to the user. After getting the new password from the user, you can call <a href="AuthManager.html#resetPwdWithToken" class="tsd-kind-method">resetPwdWithToken</a> method with the access token and new password to change the password of the user.</p>
+<p>If email confirmation is <strong>disabled</strong> in your app authentication settings or if the user&#39;s email has not been verified, it returns an error.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">email</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The email address of the user to send the verification email</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">redirectURL</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>After successful verification of the reset-password link, the user is redirected to this URL with an <code>access_token</code> and <code>action</code> in query string parameter. The <code>redirectURL</code> needs to match with one of the configured redirect URLs in your <strong>Version Settings/Authentication</strong> configuration in Agnost Studio.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L618">AuthManager.ts:618</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="sendSignInCode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>send<wbr/>Sign<wbr/>In<wbr/>Code</span><a href="#sendSignInCode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="sendSignInCode.sendSignInCode-1"><span class="tsd-kind-call-signature">send<wbr/>Sign<wbr/>In<wbr/>Code</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">phone</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#sendSignInCode.sendSignInCode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sends an SMS code (OTP - one time password) that can be used to sign in to the phone number of the user.</p>
+<p>This method works only if sign in using authorization codes is <strong>enabled</strong> in your app authentication settings and the user&#39;s phone number has already been verified.</p>
+<p>After getting the SMS code you can call the <a href="AuthManager.html#signInWithCode" class="tsd-kind-method">signInWithCode</a> method. Agnost verifies the validity of the code and if successful returns the auth grants (e.g., session) of the user.</p>
+<p>If sign in using authorization codes is <strong>disabled</strong> in your app authentication settings or if the user&#39;s phone has not been verified, it returns an error.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">phone</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The phone number of the user to send the SMS code</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L657">AuthManager.ts:657</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="setSession" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Session</span><a href="#setSession" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="setSession.setSession-1"><span class="tsd-kind-call-signature">set<wbr/>Session</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">session</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setSession.setSession-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sets (overrides) the active user session. If you use the <em>signUp</em> or <em>signIn</em> methods of this client library, you do not need to call this method to set the user session, since the client library automatically manages user session data.</p>
+<p>However if you have more complex sign up or sign in logic, such as 2 factor authentication flow where you authenticate users using a short code, you might need to create your endpoints and associated services to handle these special cases. In those situations, this method becomes handy to update the session data of logged-in users so that the <a href="Fetcher.html" class="tsd-kind-class">Fetcher</a> can update its default headers to pass the correct session token in its RESTful API calls.</p>
+<p>When you use custom authentication logic in your apps, you need to call this service to update session data so that your calls to your app endpoints that require a valid session token do not fail.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">session</span>: <a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L135">AuthManager.ts:135</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="setSessionCookie" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Session<wbr/>Cookie</span><a href="#setSessionCookie" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="setSessionCookie.setSessionCookie-1"><span class="tsd-kind-call-signature">set<wbr/>Session<wbr/>Cookie</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">sessionToken</span>, <span class="tsd-kind-parameter">req</span>, <span class="tsd-kind-parameter">res</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setSessionCookie.setSessionCookie-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Saves the session token to the <em>Set-Cookie</em> header. This method is primarily used to pass the session token between the client (e.g., browser) and the server (e.g., next.js, express) in an app where server side rendering is used.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">sessionToken</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Session access token to pass from client to the server in the cookie header</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">req</span>: <span class="tsd-signature-type">any</span></h5>
+<div class="tsd-comment tsd-typography"><p>Represents the HTTP request and has properties for the request query string, parameters, body, HTTP headers, and so on</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">any</span></h5>
+<div class="tsd-comment tsd-typography"><p>Represents the HTTP response that an Express or Next.js app sends when it gets an HTTP request</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L159">AuthManager.ts:159</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="setUser" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>User</span><a href="#setUser" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="setUser.setUser-1"><span class="tsd-kind-call-signature">set<wbr/>User</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">user</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setUser.setUser-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Saves the user data to local storage. If you use the <em>signUp</em> or <em>signIn</em> methods of this client library, you do not need to call this method to set the user data, since the client library automatically manages user data.</p>
+<p>However, if you have not used the <em>signUp</em> or <em>signIn</em> methods of this client library, this method enables you to update locally stored user data.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">user</span>: <a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L147">AuthManager.ts:147</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="signInWithCode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sign<wbr/>In<wbr/>With<wbr/>Code</span><a href="#signInWithCode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="signInWithCode.signInWithCode-1"><span class="tsd-kind-call-signature">sign<wbr/>In<wbr/>With<wbr/>Code</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">phone</span>, <span class="tsd-kind-parameter">code</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#signInWithCode.signInWithCode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Log in an existing user using phone number and SMS code (OTP - one time password) that is sent to the phone. In order to use phone and password based log in, the authentication provider needs to be Agnost, meaning a user with phone and password credentials exists in the app database and <em>sign in using authorization codes</em> needs to be <strong>enabled</strong> in your app authentication settings. Before calling this method, you need to call the <a href="AuthManager.html#sendSignInCode" class="tsd-kind-method">sendSignInCode</a> method to get the SMS code delivered to the phone.</p>
+<p>If successful, this method returns the authorization grants (e.g., session object) of the user.</p>
+<p>If phone number confirmation is <strong>enabled</strong> in your app authentication settings and if the phone of the user has not been verified yet, this method will return an error message.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">phone</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Phone of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">code</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>SMS code (OTP - one time password)</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L381">AuthManager.ts:381</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="signInWithEmail" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sign<wbr/>In<wbr/>With<wbr/>Email</span><a href="#signInWithEmail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="signInWithEmail.signInWithEmail-1"><span class="tsd-kind-call-signature">sign<wbr/>In<wbr/>With<wbr/>Email</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">email</span>, <span class="tsd-kind-parameter">password</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#signInWithEmail.signInWithEmail-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Log in an existing user using email and password. In order to use email and password based log in, the authentication provider needs to be Agnost, meaning a user with email and password credentials exists in the app database.</p>
+<p>If email confirmation is <strong>enabled</strong> in your app authentication settings and if the email of the user has not been verified yet, this method will return an error message.</p>
+<p>You cannot use this method to log in a user who has signed up with an Oauth2 provider such as Google, Apple, Facebook, Twitter etc.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">email</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Email of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">password</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Password of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L321">AuthManager.ts:321</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="signInWithPhone" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sign<wbr/>In<wbr/>With<wbr/>Phone</span><a href="#signInWithPhone" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="signInWithPhone.signInWithPhone-1"><span class="tsd-kind-call-signature">sign<wbr/>In<wbr/>With<wbr/>Phone</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">phone</span>, <span class="tsd-kind-parameter">password</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#signInWithPhone.signInWithPhone-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Log in an existing user using phone number and password. In order to use phone and password based log in, the authentication provider needs to be Agnost, meaning a user with phone and password credentials exists in the app database.</p>
+<p>If phone number confirmation is <strong>enabled</strong> in your app authentication settings and if the phone of the user has not been verified yet, this method will return an error message.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">phone</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Phone of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">password</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Password of the user</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L350">AuthManager.ts:350</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="signInWithProvider" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sign<wbr/>In<wbr/>With<wbr/>Provider</span><a href="#signInWithProvider" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="signInWithProvider.signInWithProvider-1"><span class="tsd-kind-call-signature">sign<wbr/>In<wbr/>With<wbr/>Provider</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">provider</span>, <span class="tsd-kind-parameter">redirectURL</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#signInWithProvider.signInWithProvider-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Signs in a user using the Oauth2 flow of the specified provider. Calling this method with the name of the sign in provider will redirect user to the relevant login page of the provider.</p>
+<p>If the provider sign in completes successfully, Agnost directs the user to the redirect URL with an access token that you can use to fetch the authentication grants (e.g., user and session data).</p>
+<p>If this is the first time a user is using this provider then a new user record is creted in the database, otherwise the lastLoginAt field value of the existing user record is updated.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">provider</span>: <span class="tsd-signature-type">&quot;google&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;facebook&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;twitter&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;apple&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;discord&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;github&quot;</span></h5>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">redirectURL</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>After successful provider sign in, the user is redirected to this URL with an <code>access_token</code> in query string parameter. The <code>redirectURL</code> needs to match with one of the configured redirect URLs in your <strong>Version Settings/Authentication</strong> configuration in Agnost Studio.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L410">AuthManager.ts:410</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="signOut" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sign<wbr/>Out</span><a href="#signOut" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="signOut.signOut-1"><span class="tsd-kind-call-signature">sign<wbr/>Out</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">sessionToken</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#signOut.signOut-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>If an input session token is <u>not</u> provided, signs out the user from the current session, clears user and session data in local storage and removes the <strong>Session</strong> header in <a href="Fetcher.html" class="tsd-kind-class">Fetcher</a>. Otherwise, signs out the user from the session identified by the input token.</p>
+<blockquote>
+<p><em>An active user session is required (e.g., user needs to be logged in) to call this method.</em></p>
+</blockquote>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">sessionToken</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Session token which uniquely identifies a user session</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L435">AuthManager.ts:435</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="signOutAll" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sign<wbr/>Out<wbr/>All</span><a href="#signOutAll" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="signOutAll.signOutAll-1"><span class="tsd-kind-call-signature">sign<wbr/>Out<wbr/>All</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#signOutAll.signOutAll-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>A user can have multiple active sessions (e.g., logged in form multiple different devices, browsers). This method signs out users from all their active sessions. For the client that triggers this method, also clears user and session data in local storage, and removes the <strong>Session</strong> header in <a href="Fetcher.html" class="tsd-kind-class">Fetcher</a>.</p>
+<blockquote>
+<p><em>An active user session is required (e.g., user needs to be logged in) to call this method.</em></p>
+</blockquote>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L463">AuthManager.ts:463</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="signOutAllExceptCurrent" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sign<wbr/>Out<wbr/>All<wbr/>Except<wbr/>Current</span><a href="#signOutAllExceptCurrent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="signOutAllExceptCurrent.signOutAllExceptCurrent-1"><span class="tsd-kind-call-signature">sign<wbr/>Out<wbr/>All<wbr/>Except<wbr/>Current</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#signOutAllExceptCurrent.signOutAllExceptCurrent-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Signs out users from all their active sessions except the current one which makes the api call.</p>
+<blockquote>
+<p><em>An active user session is required (e.g., user needs to be logged in) to call this method.</em></p>
+</blockquote>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L480">AuthManager.ts:480</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="signUpWithEmail" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sign<wbr/>Up<wbr/>With<wbr/>Email</span><a href="#signUpWithEmail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="signUpWithEmail.signUpWithEmail-1"><span class="tsd-kind-call-signature">sign<wbr/>Up<wbr/>With<wbr/>Email</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">email</span>, <span class="tsd-kind-parameter">password</span>, <span class="tsd-kind-parameter">redirectURL</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">userData</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#signUpWithEmail.signUpWithEmail-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Creates a new user using the email and password authentication method in the database.</p>
+<p>If email confirmation is <strong>enabled</strong> in your app authentication settings then a confirm sign up email will be sent to the user with a link to click and this method will return the user data with a <code>null</code> session. Until the user clicks this link, the email address will not be verified and a session will not be created. If a user tries to signIn to an account where email has not been confirmed yet, an error message will be retured asking for email verification.</p>
+<p>After user clicks on the link in confirmation email, Agnost verifies the verification token sent in the email and if the email is verified successfully redirects the user to the redirect URL with an <code>access_token</code>. You can use this <code>access_token</code> token to get authentication grants, namely the user data and a new session object by calling the <a href="AuthManager.html#getAuthGrant" class="tsd-kind-method">getAuthGrant</a> method.</p>
+<p>If email confirmation is <strong>disabled</strong>, a newly created session object with the user data will be returned.</p>
+<blockquote>
+<p>If <code>emailVerified</code> field is set to true and passed in the last parameter of this method in a user JSON object, then the email verification step is bypassed even the email verification is enabled in application authentication settings. This is primarily used for use-cases where the email address of the user is alreay known/verified so that users are not forced to verify their email addresses again.</p>
+</blockquote>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">email</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Unique email address of the user. If there is already a user with the provided email address then an error is reaised.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">password</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Password of the user, should be at least 6 characters long</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">redirectURL</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>This parameter is required if email confirmation is enabled. After email address of the user is confirmed, the user is redirected to this URL with an <code>access_token</code> in query string parameter. The <code>redirectURL</code> needs to match with one of the configured redirect URLs in your <strong>Version Settings/Authentication</strong> configuration in Agnost Studio.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">userData</span>: <a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a></h5>
+<div class="tsd-comment tsd-typography"><p>Additional user data associated with the user that is being created in the database. You can pass additional user fields with values (except email and password)  to be created in the database.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L240">AuthManager.ts:240</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="signUpWithPhone" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sign<wbr/>Up<wbr/>With<wbr/>Phone</span><a href="#signUpWithPhone" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="signUpWithPhone.signUpWithPhone-1"><span class="tsd-kind-call-signature">sign<wbr/>Up<wbr/>With<wbr/>Phone</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">phone</span>, <span class="tsd-kind-parameter">password</span>, <span class="tsd-kind-parameter">userData</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#signUpWithPhone.signUpWithPhone-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Creates a new user using the mobile phone number and password authentication method in the database.</p>
+<p>If phone number confirmation is <strong>enabled</strong> in your app authentication settings then a confirmation code SMS will be sent to the phone and this method will return the user data and a <code>null</code> session. Until the user validates this code by calling <a href="AuthManager.html#verifyPhone" class="tsd-kind-method">verifyPhone</a>, the phone number will not be verified. If a user tries to signIn to an account where phone number has not been confirmed yet, an error message will be retured asking for phone number verification.</p>
+<p>If phone number confirmation is <strong>disabled</strong>, a newly created session object and the user data will be returned.</p>
+<blockquote>
+<p>If <code>phoneVerified</code> field is set to true and passed in the last parameter of this method in a user JSON object, then the phone number verification step is bypassed even the phone number verification is enabled in application authentication settings. This is primarily used for use-cases where the phone number of the user is alreay known/verified so that users are not forced to verify their phone numbers again.</p>
+</blockquote>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">phone</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Unique phone number of the user. If there is already a user with the provided phone number then an error is reaised.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">password</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Password of the user, should be at least 6 characters long</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">userData</span>: <a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a></h5>
+<div class="tsd-comment tsd-typography"><p>Additional user data associated with the user that is being created in the database. You can pass additional user fields with values (except phone and password)  to be created in the database.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L283">AuthManager.ts:283</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="verifyPhone" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>verify<wbr/>Phone</span><a href="#verifyPhone" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="verifyPhone.verifyPhone-1"><span class="tsd-kind-call-signature">verify<wbr/>Phone</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">phone</span>, <span class="tsd-kind-parameter">code</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#verifyPhone.verifyPhone-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Verifies the phone number using code sent in SMS and if verified, returns the auth grants (e.g., user and session data) of the user if the phone is verified due to a new sign up. If the phone is verified using the code send as a result of calling the <code>changePhone</code> method, returns the updated user data only.</p>
+<p>If the code is invalid or expired, it returns an error message.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">phone</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The mobile phone number of the user where the SMS code was sent</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">code</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The code sent in SMS (e.g., 6-digit number)</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">errors</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/APIError.html" class="tsd-signature-type tsd-kind-interface">APIError</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">session</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Session.html" class="tsd-signature-type tsd-kind-interface">Session</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">user</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/User.html" class="tsd-signature-type tsd-kind-interface">User</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/cloud-agnost/agnost-client/blob/16e8a59/src/AuthManager.ts#L761">AuthManager.ts:761</a></li></ul></aside></li></ul></section></section></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)" id="icon-chevronDown"></path></svg>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg>On This Page</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li><a href="#constructor" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-512"></use></svg><span>constructor</span></a></li>
+<li><a href="#_client" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>#client</span></a></li>
+<li><a href="#_localStorage" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>#local<wbr/>Storage</span></a></li>
+<li><a href="#_signInRedirect" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>#sign<wbr/>In<wbr/>Redirect</span></a></li>
+<li><a href="#fetcher" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>fetcher</span></a></li>
+<li><a href="#_deleteLocalData" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>#delete<wbr/>Local<wbr/>Data</span></a></li>
+<li><a href="#_saveLocalData" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>#save<wbr/>Local<wbr/>Data</span></a></li>
+<li><a href="#changeEmail" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>change<wbr/>Email</span></a></li>
+<li><a href="#changePassword" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>change<wbr/>Password</span></a></li>
+<li><a href="#changePhone" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>change<wbr/>Phone</span></a></li>
+<li><a href="#clearLocalData" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>clear<wbr/>Local<wbr/>Data</span></a></li>
+<li><a href="#getAllSessions" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>All<wbr/>Sessions</span></a></li>
+<li><a href="#getAuthGrant" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Auth<wbr/>Grant</span></a></li>
+<li><a href="#getSession" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Session</span></a></li>
+<li><a href="#getUser" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>User</span></a></li>
+<li><a href="#getUserFromDB" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>User<wbr/>FromDB</span></a></li>
+<li><a href="#getUserFromDBbyCookie" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>User<wbr/>FromDBby<wbr/>Cookie</span></a></li>
+<li><a href="#invalidateSession" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>invalidate<wbr/>Session</span></a></li>
+<li><a href="#onUserEvent" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>on<wbr/>User<wbr/>Event</span></a></li>
+<li><a href="#removeSessionCookie" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>remove<wbr/>Session<wbr/>Cookie</span></a></li>
+<li><a href="#resendVerificationCode" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>resend<wbr/>Verification<wbr/>Code</span></a></li>
+<li><a href="#resendVerificationEmail" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>resend<wbr/>Verification<wbr/>Email</span></a></li>
+<li><a href="#resetPwdWithCode" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>reset<wbr/>Pwd<wbr/>With<wbr/>Code</span></a></li>
+<li><a href="#resetPwdWithToken" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>reset<wbr/>Pwd<wbr/>With<wbr/>Token</span></a></li>
+<li><a href="#sendMagicLinkEmail" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>send<wbr/>Magic<wbr/>Link<wbr/>Email</span></a></li>
+<li><a href="#sendResetPwdCode" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>send<wbr/>Reset<wbr/>Pwd<wbr/>Code</span></a></li>
+<li><a href="#sendResetPwdEmail" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>send<wbr/>Reset<wbr/>Pwd<wbr/>Email</span></a></li>
+<li><a href="#sendSignInCode" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>send<wbr/>Sign<wbr/>In<wbr/>Code</span></a></li>
+<li><a href="#setSession" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>set<wbr/>Session</span></a></li>
+<li><a href="#setSessionCookie" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>set<wbr/>Session<wbr/>Cookie</span></a></li>
+<li><a href="#setUser" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>set<wbr/>User</span></a></li>
+<li><a href="#signInWithCode" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>In<wbr/>With<wbr/>Code</span></a></li>
+<li><a href="#signInWithEmail" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>In<wbr/>With<wbr/>Email</span></a></li>
+<li><a href="#signInWithPhone" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>In<wbr/>With<wbr/>Phone</span></a></li>
+<li><a href="#signInWithProvider" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>In<wbr/>With<wbr/>Provider</span></a></li>
+<li><a href="#signOut" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>Out</span></a></li>
+<li><a href="#signOutAll" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>Out<wbr/>All</span></a></li>
+<li><a href="#signOutAllExceptCurrent" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>Out<wbr/>All<wbr/>Except<wbr/>Current</span></a></li>
+<li><a href="#signUpWithEmail" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>Up<wbr/>With<wbr/>Email</span></a></li>
+<li><a href="#signUpWithPhone" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>sign<wbr/>Up<wbr/>With<wbr/>Phone</span></a></li>
+<li><a href="#verifyPhone" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>verify<wbr/>Phone</span></a></li></ul></div></details></div>
+<div class="site-menu">
+<nav class="tsd-navigation"><a href="../modules.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)"></path></g></svg><span>@agnost/client</span></a>
+<ul class="tsd-small-nested-navigation">
+<li><a href="APIBase.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-128"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-class)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)"></path></g></svg><span>APIBase</span></a></li>
+<li><a href="AgnostClient.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Agnost<wbr/>Client</span></a></li>
+<li><a href="AuthManager.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Auth<wbr/>Manager</span></a></li>
+<li><a href="BucketManager.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Bucket<wbr/>Manager</span></a></li>
+<li><a href="EndpointManager.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Endpoint<wbr/>Manager</span></a></li>
+<li><a href="Fetcher.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Fetcher</span></a></li>
+<li><a href="RealtimeManager.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Realtime<wbr/>Manager</span></a></li>
+<li><a href="StorageManager.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Storage<wbr/>Manager</span></a></li>
+<li><a href="../interfaces/APIError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-256"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)"></path></g></svg><span>APIError</span></a></li>
+<li><a href="../interfaces/ClientOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Client<wbr/>Options</span></a></li>
+<li><a href="../interfaces/ClientStorage.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Client<wbr/>Storage</span></a></li>
+<li><a href="../interfaces/CookieOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Cookie<wbr/>Options</span></a></li>
+<li><a href="../interfaces/ErrorEntry.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Error<wbr/>Entry</span></a></li>
+<li><a href="../interfaces/EventData.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Event<wbr/>Data</span></a></li>
+<li><a href="../interfaces/FileUploadOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>File<wbr/>Upload<wbr/>Options</span></a></li>
+<li><a href="../interfaces/KeyValuePair.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Key<wbr/>Value<wbr/>Pair</span></a></li>
+<li><a href="../interfaces/MemberData.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Member<wbr/>Data</span></a></li>
+<li><a href="../interfaces/RealtimeOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Realtime<wbr/>Options</span></a></li>
+<li><a href="../interfaces/Session.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Session</span></a></li>
+<li><a href="../interfaces/User.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>User</span></a></li>
+<li><a href="../types/ListenerFunction.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4194304"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-type-alias)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.31 16V8.224H8.91V7.24H14.79V8.224H12.39V16H11.31Z" fill="var(--color-text)"></path></g></svg><span>Listener<wbr/>Function</span></a></li>
+<li><a href="../types/UserEventListenerFunction.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>User<wbr/>Event<wbr/>Listener<wbr/>Function</span></a></li>
+<li><a href="../functions/createClient.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-64"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-function)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.39 16V7.24H14.55V8.224H10.446V11.128H14.238V12.112H10.47V16H9.39Z" fill="var(--color-text)"></path></g></svg><span>create<wbr/>Client</span></a></li></ul></nav></div></div></div>
+<div class="tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div></body></html>
