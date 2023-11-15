@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+### 1.2.1 (2023-11-15)
+
+-  Minor bug fixes and typo corrections in documentation
+
 ### 1.1.0 (2023-10-27)
 
 -  Minor bug fixes and typo corrections in documentation
