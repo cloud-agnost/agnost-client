@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+### 1.2.5 (2024-01-02)
+
+-  Added 'agnost' prefix to all API server http calls
+
 ### 1.2.4 (2023-11-15)
 
 -  Minor bug fixes and typo corrections in documentation
