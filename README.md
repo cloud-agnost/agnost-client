@@ -61,7 +61,7 @@ As input to `createClient` you need to provide the base URL of your app version'
 
 This guide will show you how to use the key modules of the client library to execute commands in
 your backend app. For more in-depth coverage, see the
-[Client API Reference](https://agnost.com/client-reference).
+[Client API Reference](https://agnost.dev/client).
 
 ### Authentication
 
@@ -221,12 +221,11 @@ const result = await agnost.storage
 
 You can use the following resources to learn more and get help
 
--  [Quick start](https://www.agnost.com/docs/quick-start)
--  [Agnost Docs](https://www.agnost.com/docs)
+-  [Agnost Docs](https://agnost.dev/docs/intro)
 
 ## Bugs Report
 
-Think you’ve found a bug? Please, open an issue on [GitHub repository](https://github.com/agnost/agnost-client/issues).
+Think you’ve found a bug? Please, open an issue on [GitHub repository](https://github.com/cloud-agnost/agnost-client/issues).
 
 ## Support / Feedback
 
