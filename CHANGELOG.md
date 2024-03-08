@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+### 1.2.6 (2024-03-08)
+
+-  Updates `signUpWithEmail` method to fix Typescript errors
+
 ### 1.2.5 (2024-01-02)
 
 -  Added 'agnost' prefix to all API server http calls
