@@ -20,14 +20,14 @@ need to do additional configuration in your app version settings.
 To install via [NPM](https://www.npmjs.com/)
 
 ```sh
-npm install agnost
+npm install @agnost/client
 ```
 
 If you're using a bundler (like [webpack](https://webpack.js.org/)), you can import the Agnost and
 create your Agnost client instance.
 
 ```js
-import { createClient } from 'agnost';
+import { createClient } from '@agnost/client';
 
 //Create a client for interacting with backend app
 //You need to provide envUrl and apiKey as input parameters
